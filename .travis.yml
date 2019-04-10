@@ -1,0 +1,10 @@
+sudo: required
+services:
+  -docker
+
+before_install:
+  - docker build -t connectwithshrey/docker-react-starter -f Dockerfile.dev .
+
+script:
+  - docker run connectwithshrey/docker-reeact-starter npm run test -- --coverage
+      
